@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -40,7 +40,18 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <?php
+
+                    $defaults = array(
+                        'container' => 'ul',
+                        'theme_location' => 'primary-menu',
+                        'menu_class' => 'nav navbar-nav navbar-right'
+                    );
+
+                    wp_nav_menu( $defaults );
+                ?>
+
+                <!-- <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="index.html">Home</a>
                     </li>
@@ -53,7 +64,7 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
             <!-- /.navbar-collapse -->
         </div>
